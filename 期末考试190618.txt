@@ -1,0 +1,84 @@
+									期末考试试题
+
+姓名___________________________                                                班级______________________________                                得分_____________________________
+
+1、（1）请找到python.exe地址以及pip.exe的地址，并写下来（4分）
+（2）C:\mydir目录有hello.py文件，请执将该文件的执行结果写出来（4分）
+（3）请描述如何导入tkinter的库，以及如何下载并导入flask（6分）
+（4）请写出下面代码的含义，并写出最后的结果(6分）
+def  test():
+	for i in range(10):
+		i  = i+1
+		print(i)
+test()
+
+
+
+
+ 
+
+
+
+2、（1）请问文件传输一般使用哪种传输方式，为什么（4分）
+（2）请问通信数据的实时传输用哪种方式，为什么（4分）
+（3）请解释一下IP地址与端口号在数据传输中的意义和用途（4分）
+（4）请用UDP的方式写一个客户端和服务端，要求：1、客户端提示用户输入一个数字 2、客户端收到数字后向本机的服务端发送 
+				3、服务端一直保持监听状态  4、服务端收到数字后将数字打印出来（8分）
+
+
+
+
+
+
+
+
+3、（1）请解释www.baidu.com 与 119.75.217.109 的关系（2分）
+（2）请描述上网的过程，并写出谁是服务器，谁是客户端（6分）
+（3）请用flask 写一个打印一个“hello world”的字段的网页（4分）
+（4）请将下面代码补全，并说出它的执行含义（8分）
+
+from flask import Flask,render_template,request,redirect,url_for
+from werkzeug.utils import secure_filename
+import os
+
+app = Flask(__name__)
+
+@app.route('/upload', methods=['POST', 'GET'])
+def upload():
+    if request.method == 'POST':
+        f = request.files['file']
+        basepath = os.path.dirname(__file__)  # 当前文件所在路径
+        upload_path = os.path.join(basepath, 'static/uploads',secure_filename(f.filename))  #注意：没有的文件夹一定要先创建，不然会提示没有该路径
+        f.save(upload_path)
+        return redirect(url_for('upload'))
+    return render_template('upload.html')
+
+________________________:
+
+____________________
+
+
+
+
+
+
+4、（1）请问线程和进程在Python中应该如何导入（4分）
+（2）用Python写出 1+2+3+···+100的求和（6分）
+（3）将1+2+3+···+100的求和过程用线程来完成（4分）
+（4）将1+2+3+···+100的求和过程用进程来完成（4分）
+（5）请问线程和进程和进程在结果上面的不同（2分）
+
+
+
+
+
+
+
+
+
+5、（1）请问如何下载opencv，并且如何检测自己下载已经成功了（4分）
+（2）请下载一张图片，用OpenCV读取这张图片（4分），并将这张图片转化成黑白图片
+（3）请将读取的图片旋转一定的角度（4分）
+（4）请说明相机识别人脸的原理（3分）
+（5）请说明相机在自动驾驶中的使用原理（3分）
+
